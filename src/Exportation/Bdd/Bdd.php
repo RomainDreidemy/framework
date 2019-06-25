@@ -55,6 +55,5 @@ class Bdd
 
         $writer = new Xlsx($spreadsheet);
         $writer->save(__DIR__ . '/../../../public/assets/export/export-base-de-donnee-' . date("d-m-Y") . '.xlsx');
-        App::Debug($bdd);
     }
 }
