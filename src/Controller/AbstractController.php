@@ -18,7 +18,9 @@ abstract class AbstractController
             'SESSION_USER' => $_SESSION['user'] ?? [],
             'MESSAGES_ERREUR' => Message::show(),
             '_FRONT' => App::URL,
-            'SESSION' => $_SESSION
+            'SESSION' => $_SESSION,
+            'POST' => $_POST ?? [],
+            'GET' => $_GET ?? []
         ];
 
         $arguments = array_merge($arguments, $app);
