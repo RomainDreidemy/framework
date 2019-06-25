@@ -9,8 +9,6 @@ class HomeController extends AbstractController
 {
     static public function home() : void
     {
-        Bdd::excel();
-
         self::twig(
             'home.html',
             [
