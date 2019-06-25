@@ -4,10 +4,10 @@ namespace App\App;
 class App
 {
     const DB_SGBD = 'mysql';
-    const DB_HOST = 'host';
-    const DB_DATABASE = 'database;charset=utf8';
-    const DB_USER = 'login';
-    const DB_PASSWORD = 'password';
+    const DB_HOST = 'localhost';
+    const DB_DATABASE = 'framework';
+    const DB_USER = 'root';
+    const DB_PASSWORD = '';
     public static $db;
     const URL = "https://www.my-website.fr";
 
@@ -15,7 +15,7 @@ class App
     {
         try {
             self::$db = new \PDO(
-                self::DB_SGBD . ':host=' . self::DB_HOST . ';dbname=' . self::DB_DATABASE . ';',
+                self::DB_SGBD . ':host=' . self::DB_HOST . ';dbname=' . self::DB_DATABASE . ';charset=utf8;',
                 self::DB_USER,
                 self::DB_PASSWORD,
                 [
