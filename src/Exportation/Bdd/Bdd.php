@@ -17,7 +17,9 @@ class Bdd
         
         foreach($tables as $t){
             // Retrouver les colonnes
-            $select = App::$db->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'framework' AND TABLE_NAME = '" . $t[0] . "'");
+            $select = App::$db->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS 
+                                        WHERE TABLE_SCHEMA = '" . App::DB_DATABASE ."' 
+                                        AND TABLE_NAME = '" . $t[0] . "'");
             $colonnes = $select->fetchAll(\PDO::FETCH_NUM);
 
             foreach($colonnes as $c){

@@ -5,9 +5,9 @@ class App
 {
     const DB_SGBD = 'mysql';
     const DB_HOST = 'localhost';
-    const DB_DATABASE = 'database';
-    const DB_USER = 'user';
-    const DB_PASSWORD = 'password';
+    const DB_DATABASE = 'framework';
+    const DB_USER = 'root';
+    const DB_PASSWORD = '';
     public static $db;
     const URL = "https://www.my-website.fr";
 
