@@ -10,7 +10,7 @@ class Bdd
     static public function export()
     {
         // Retrouve toutes les tables
-        $select = App::$db->query("SHOW TABLES FROM " . App::DB_DATABASE);
+        $select = App::$db->query("SHOW TABLES FROM " . App::$config->database->name);
         $tables = $select->fetchAll(\PDO::FETCH_NUM);
 
         $result = [];
@@ -18,7 +18,7 @@ class Bdd
         foreach($tables as $t){
             // Retrouver les colonnes
             $select = App::$db->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS 
-                                        WHERE TABLE_SCHEMA = '" . App::DB_DATABASE ."' 
+                                        WHERE TABLE_SCHEMA = '" . App::$config->database->name ."' 
                                         AND TABLE_NAME = '" . $t[0] . "'");
             $colonnes = $select->fetchAll(\PDO::FETCH_NUM);
 
