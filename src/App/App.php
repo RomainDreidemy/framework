@@ -3,21 +3,24 @@ namespace App\App;
 
 class App
 {
-    const DB_SGBD = 'mysql';
-    const DB_HOST = 'localhost';
-    const DB_DATABASE = 'framework';
-    const DB_USER = 'root';
-    const DB_PASSWORD = '';
+    public static $config;
     public static $db;
-    const URL = "https://www.my-website.fr";
+
+    public function __construct()
+    {
+        $configFile = file_get_contents(__DIR__ . '/../../config/config.json');
+        $config = json_decode($configFile);
+        self::$config = $config;
+    }
 
     static public function DB_Connect() : void
     {
+        $database = self::$config->database;
         try {
             self::$db = new \PDO(
-                self::DB_SGBD . ':host=' . self::DB_HOST . ';dbname=' . self::DB_DATABASE . ';charset=utf8;',
-                self::DB_USER,
-                self::DB_PASSWORD,
+                $database->sgbd . ':host=' . $database->host . ';dbname=' . $database->name . ';charset=utf8;',
+                $database->user,
+                $database->password,
                 [
                     \PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING
                 ]

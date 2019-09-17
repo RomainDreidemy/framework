@@ -79,7 +79,7 @@ class Router
         }
 
         if(!$compareRoute){
-            header("location:". App::URL . "/error/404");
+            header("location:". App::$config->url . "/error/404");
         }
     }
 

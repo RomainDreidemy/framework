@@ -1,0 +1,11 @@
+{
+    "database" : {
+        "sgbd" : "mysql",
+        "host" : "localhost",
+        "name" : "databasename;charset=utf8",
+        "user" : "root",
+        "password" : ""
+    },
+
+    "url" : "https://exemple.fr"
+}

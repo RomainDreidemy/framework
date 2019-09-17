@@ -17,7 +17,7 @@ abstract class AbstractController
         $app = [
             'SESSION_USER' => $_SESSION['user'] ?? [],
             'MESSAGES_ERREUR' => Message::show(),
-            '_FRONT' => App::URL,
+            '_FRONT' => App::$config->url,
             'SESSION' => $_SESSION,
             'POST' => $_POST ?? [],
             'GET' => $_GET ?? []
