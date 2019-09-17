@@ -9,6 +9,6 @@ use App\App\App;
 
 // Penser a initialiser les informations de connexion à la base de données dans le fichier de configuration
 $app = new App();
-$app->DB_Connect();
+// $app->DB_Connect();
 
 Router::parseRoute();
