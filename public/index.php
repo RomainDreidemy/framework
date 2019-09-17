@@ -7,6 +7,8 @@ require __DIR__ . '/../vendor/autoload.php';
 use App\Router\Router;
 use App\App\App;
 
-App::DB_Connect();
+// Penser a initialiser les informations de connexion à la base de données dans le fichier de configuration
+$app = new App();
+$app->DB_Connect();
 
 Router::parseRoute();

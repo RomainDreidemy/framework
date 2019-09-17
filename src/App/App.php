@@ -45,6 +45,5 @@ class App
             var_dump($arg);
         }
         echo '</div>';
-
     }
 }
